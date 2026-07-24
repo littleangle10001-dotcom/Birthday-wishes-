@@ -3,94 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday ❤️</title>
+<title>Happy Birthday Bulbul ❤️</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<link rel="stylesheet" href="style.css">
 
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ff4e8d,#7d5fff);
-overflow:hidden;
-color:white;
-}
-
-.container{
-text-align:center;
-padding:20px;
-}
-
-h1{
-font-size:42px;
-margin-bottom:15px;
-}
-
-p{
-font-size:22px;
-margin-bottom:30px;
-}
-
-button{
-padding:15px 35px;
-font-size:20px;
-border:none;
-border-radius:50px;
-background:#ff006e;
-color:white;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.05);
-}
-
-#surprise{
-display:none;
-animation:fadeIn 1s;
-}
-
-@keyframes fadeIn{
-from{opacity:0;}
-to{opacity:1;}
-}
-</style>
 </head>
 
 <body>
 
-<div class="container">
-
-<div id="start">
-<h1>🎂 Happy Birthday Bulbul 🎂</h1>
-<p>From Lazzy ❤️</p>
-
-<button onclick="openGift()">
-🎁 Tap To Open
-</button>
+<div id="intro">
+    <div class="gift">🎁</div>
+    <h1>Someone special has a surprise for you ❤️</h1>
+    <button onclick="openGift()">Open Surprise ✨</button>
 </div>
 
-<div id="surprise">
-<h1>Coming Soon...</h1>
-<p>Version 2 Loading ❤️</p>
-</div>
+
+<audio id="music" loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+
+<div id="main" class="hidden">
+
+    <section id="countdown">
+        <h1 id="count">3</h1>
+    </section>
+
+
+    <section class="wish">
+
+        <h1 class="title">
+            Happy Birthday Bulbul ❤️
+        </h1>
+
+        <p id="message"></p>
+
+    </section>
+
+
+    <section class="gallery">
+
+        <h2>Beautiful Memories 🌸</h2>
+
+        <div class="photos">
+
+            <img src="images/photo1.jpg">
+
+            <img src="images/photo2.jpg">
+
+        </div>
+
+    </section>
+
+
+    <section class="memory">
+
+        <div class="card">
+            "Some souls make life more beautiful just by existing ❤️"
+        </div>
+
+        <div class="card">
+            "May Mata Rani always bless you with endless happiness 🌻"
+        </div>
+
+    </section>
+
+
+    <section class="final">
+
+        <h1>
+            Happy Birthday Bulbul ❤️
+        </h1>
+
+        <p>
+        No matter where life takes us, I'll always pray for your happiness.
+        <br><br>
+        Happy Birthday, Bulbul ❤️
+        <br>
+        — Lazzy
+        </p>
+
+    </section>
+
 
 </div>
 
-<script>
-function openGift(){
-document.getElementById("start").style.display="none";
-document.getElementById("surprise").style.display="block";
-}
-</script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
