@@ -9,6 +9,7 @@ function openGift(){
 
     createHearts();
     createSparkles();
+    createRoses();
 
     startCountdown();
 
@@ -35,6 +36,8 @@ function startCountdown(){
             document.getElementById("countdown").style.display="none";
 
             createConfetti();
+
+            fireworks();
 
             typeMessage();
 
@@ -180,6 +183,62 @@ setTimeout(()=>{
 conf.remove();
 
 },5000);
+
+}// Rose Petals
+
+function createRoses(){
+
+setInterval(()=>{
+
+let rose=document.createElement("div");
+
+rose.innerHTML="🌹";
+
+rose.className="rose";
+
+rose.style.left=Math.random()*100+"vw";
+
+rose.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+document.body.appendChild(rose);
+
+setTimeout(()=>{
+
+rose.remove();
+
+},10000);
+
+},700);
+
+}
+
+
+// Fireworks
+
+function fireworks(){
+
+for(let i=0;i<30;i++){
+
+let fire=document.createElement("div");
+
+fire.innerHTML="✨";
+
+fire.className="firework";
+
+fire.style.left=Math.random()*100+"vw";
+
+fire.style.top=Math.random()*70+"vh";
+
+document.body.appendChild(fire);
+
+setTimeout(()=>{
+
+fire.remove();
+
+},2000);
+
+}
 
 }
 
