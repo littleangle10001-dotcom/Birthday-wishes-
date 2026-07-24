@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#ff9ad5,#9b8cff);
+    color:white;
+    text-align:center;
+}
+
+
+#intro{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+
+.gift{
+    font-size:90px;
+    animation:bounce 1.5s infinite;
+}
+
+
+@keyframes bounce{
+    50%{
+        transform:translateY(-20px);
+    }
+}
+
+
+button{
+    margin-top:30px;
+    padding:15px 35px;
+    border:none;
+    border-radius:40px;
+    background:white;
+    color:#ff4fa3;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(255,255,255,.7);
+}
+
+
+.hidden{
+    display:none;
+}
+
+
+
+#countdown{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+#count{
+    font-size:100px;
+    animation:zoom 1s;
+}
+
+
+@keyframes zoom{
+    from{
+        transform:scale(0);
+    }
+    to{
+        transform:scale(1);
+    }
+}
+
+
+.wish{
+    padding:40px 20px;
+    min-height:100vh;
+}
+
+
+.title{
+    font-size:35px;
+    text-shadow:0 0 15px white;
+    margin-bottom:30px;
+}
+
+
+#message{
+    font-size:20px;
+    line-height:1.8;
+    max-width:700px;
+    margin:auto;
+}
+
+
+
+.gallery{
+    padding:40px 20px;
+}
+
+
+.photos{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+
+.photos img{
+    width:300px;
+    height:380px;
+    object-fit:cover;
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(255,255,255,.5);
+    animation:zoomphoto 8s infinite alternate;
+}
+
+
+@keyframes zoomphoto{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+
+}
+
+
+
+.memory{
+    padding:40px 20px;
+}
+
+
+.card{
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(10px);
+    padding:25px;
+    border-radius:25px;
+    margin:20px auto;
+    max-width:500px;
+    font-size:20px;
+}
+
+
+
+.final{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:30px;
+}
+
+
+.final h1{
+    font-size:45px;
+    text-shadow:
+    0 0 10px white,
+    0 0 30px pink;
+}
+
+
+.final p{
+    font-size:20px;
+    margin-top:30px;
+    line-height:1.8;
+}
+
+
+
+@media(max-width:600px){
+
+    .title{
+        font-size:28px;
+    }
+
+    .photos img{
+        width:90%;
+        height:350px;
+    }
+
+    .final h1{
+        font-size:32px;
+    }
+
+}
