@@ -12,7 +12,6 @@ function openGift(){
     createRoses();
 
     startCountdown();
-
 }
 
 
@@ -21,50 +20,37 @@ function startCountdown(){
 
     let count = document.getElementById("count");
 
-    let number = 3;
+    let numbers = ["3","2","1"];
+
+    let i = 0;
 
     let timer = setInterval(()=>{
 
-        count.innerHTML = number;
+        count.innerHTML = numbers[i];
 
-        number--;
+        i++;
 
-        function startCountdown(){
-
-    let count = document.getElementById("count");
-
-    let number = 3;
-
-    count.innerHTML = number;
-
-
-    let timer = setInterval(()=>{
-
-        number--;
-
-        if(number > 0){
-
-            count.innerHTML = number;
-
-        }
-        else{
+        if(i >= numbers.length){
 
             clearInterval(timer);
 
-            document.getElementById("countdown").style.display="none";
+            setTimeout(()=>{
 
-            createConfetti();
+                document.getElementById("countdown").style.display="none";
 
-            fireworks();
+                createConfetti();
 
-            typeMessage();
+                fireworks();
+
+                typeMessage();
+
+            },1000);
 
         }
 
     },1000);
 
 }
-
 
 
 
@@ -81,9 +67,9 @@ Mata Rani bless you 🌻❤️
 Hamesha khush raho aur ese hi muskurate raho ❤️`;
 
 
-let i=0;
+let box = document.getElementById("message");
 
-let box=document.getElementById("message");
+let i = 0;
 
 
 function typing(){
@@ -94,12 +80,11 @@ function typing(){
 
         i++;
 
-        setTimeout(typing,45);
+        setTimeout(typing,50);
 
     }
 
 }
-
 
 typing();
 
@@ -107,33 +92,48 @@ typing();
 
 
 
-
-// Floating Hearts
-
 function createHearts(){
 
 setInterval(()=>{
 
-let heart=document.createElement("div");
+let h=document.createElement("div");
 
-heart.innerHTML="❤️";
+h.innerHTML="❤️";
 
-heart.className="heart";
+h.className="heart";
 
-heart.style.left=Math.random()*100+"vw";
+h.style.left=Math.random()*100+"vw";
 
-heart.style.animationDuration=
-(3+Math.random()*5)+"s";
-
-
-document.body.appendChild(heart);
+document.body.appendChild(h);
 
 
-setTimeout(()=>{
+setTimeout(()=>h.remove(),8000);
 
-heart.remove();
 
-},8000);
+},700);
+
+}
+
+
+
+function createSparkles(){
+
+setInterval(()=>{
+
+let s=document.createElement("div");
+
+s.innerHTML="✨";
+
+s.className="sparkle";
+
+s.style.left=Math.random()*100+"vw";
+
+s.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(s);
+
+
+setTimeout(()=>s.remove(),3000);
 
 
 },500);
@@ -142,121 +142,67 @@ heart.remove();
 
 
 
-
-// Sparkles
-
-function createSparkles(){
+function createRoses(){
 
 setInterval(()=>{
 
-let star=document.createElement("div");
+let r=document.createElement("div");
 
-star.innerHTML="✨";
+r.innerHTML="🌹";
 
-star.className="sparkle";
+r.className="rose";
 
-star.style.left=Math.random()*100+"vw";
+r.style.left=Math.random()*100+"vw";
 
-star.style.top=Math.random()*100+"vh";
-
-
-document.body.appendChild(star);
+document.body.appendChild(r);
 
 
-setTimeout(()=>{
-
-star.remove();
-
-},3000);
+setTimeout(()=>r.remove(),10000);
 
 
-},300);
+},800);
 
 }
 
 
-
-
-// Confetti
 
 function createConfetti(){
 
 for(let i=0;i<100;i++){
 
-let conf=document.createElement("div");
+let c=document.createElement("div");
 
-conf.className="confetti";
+c.className="confetti";
 
-conf.style.left=Math.random()*100+"vw";
+c.style.left=Math.random()*100+"vw";
 
-conf.style.animationDuration=
-(2+Math.random()*3)+"s";
+document.body.appendChild(c);
 
+setTimeout(()=>c.remove(),5000);
 
-document.body.appendChild(conf);
-
-
-setTimeout(()=>{
-
-conf.remove();
-
-},5000);
-
-}// Rose Petals
-
-function createRoses(){
-
-setInterval(()=>{
-
-let rose=document.createElement("div");
-
-rose.innerHTML="🌹";
-
-rose.className="rose";
-
-rose.style.left=Math.random()*100+"vw";
-
-rose.style.animationDuration=
-(5+Math.random()*5)+"s";
-
-document.body.appendChild(rose);
-
-setTimeout(()=>{
-
-rose.remove();
-
-},10000);
-
-},700);
+}
 
 }
 
 
-// Fireworks
 
 function fireworks(){
 
 for(let i=0;i<30;i++){
 
-let fire=document.createElement("div");
+let f=document.createElement("div");
 
-fire.innerHTML="✨";
+f.innerHTML="✨";
 
-fire.className="firework";
+f.className="firework";
 
-fire.style.left=Math.random()*100+"vw";
+f.style.left=Math.random()*100+"vw";
 
-fire.style.top=Math.random()*70+"vh";
+f.style.top=Math.random()*70+"vh";
 
-document.body.appendChild(fire);
+document.body.appendChild(f);
 
-setTimeout(()=>{
-
-fire.remove();
-
-},2000);
-
-}
+setTimeout(()=>f.remove(),2000);
 
 }
 
