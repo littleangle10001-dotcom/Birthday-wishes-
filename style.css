@@ -284,4 +284,62 @@ button{
 
     }
 
-        }
+        }/* Rose Petals */
+
+.rose{
+    position:fixed;
+    top:-20px;
+    font-size:30px;
+    animation:roseFall linear forwards;
+    z-index:30;
+    pointer-events:none;
+}
+
+
+@keyframes roseFall{
+
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+
+
+/* Fireworks */
+
+.firework{
+
+    position:fixed;
+    font-size:35px;
+    animation:fireBlast 2s forwards;
+    z-index:60;
+    pointer-events:none;
+
+}
+
+
+@keyframes fireBlast{
+
+    0%{
+        transform:scale(0);
+        opacity:0;
+    }
+
+    50%{
+        transform:scale(2);
+        opacity:1;
+    }
+
+    100%{
+        transform:scale(0);
+        opacity:0;
+    }
+
+}
