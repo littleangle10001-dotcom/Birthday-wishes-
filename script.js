@@ -4,11 +4,11 @@ function openGift(){
 
     document.getElementById("main").classList.remove("hidden");
 
-
     let music = document.getElementById("music");
-
     music.play();
 
+    createHearts();
+    createSparkles();
 
     startCountdown();
 
@@ -22,31 +22,28 @@ function startCountdown(){
 
     let number = 3;
 
-
     let timer = setInterval(()=>{
+
+        count.innerHTML = number;
 
         number--;
 
-        if(number > 0){
-
-            count.innerHTML = number;
-
-        }
-        else{
+        if(number < 0){
 
             clearInterval(timer);
 
             document.getElementById("countdown").style.display="none";
 
+            createConfetti();
+
             typeMessage();
 
         }
 
-
     },1000);
 
-
 }
+
 
 
 
@@ -76,7 +73,7 @@ function typing(){
 
         i++;
 
-        setTimeout(typing,50);
+        setTimeout(typing,45);
 
     }
 
@@ -84,5 +81,106 @@ function typing(){
 
 
 typing();
+
+}
+
+
+
+
+// Floating Hearts
+
+function createHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div");
+
+heart.innerHTML="❤️";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.animationDuration=
+(3+Math.random()*5)+"s";
+
+
+document.body.appendChild(heart);
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},8000);
+
+
+},500);
+
+}
+
+
+
+
+// Sparkles
+
+function createSparkles(){
+
+setInterval(()=>{
+
+let star=document.createElement("div");
+
+star.innerHTML="✨";
+
+star.className="sparkle";
+
+star.style.left=Math.random()*100+"vw";
+
+star.style.top=Math.random()*100+"vh";
+
+
+document.body.appendChild(star);
+
+
+setTimeout(()=>{
+
+star.remove();
+
+},3000);
+
+
+},300);
+
+}
+
+
+
+
+// Confetti
+
+function createConfetti(){
+
+for(let i=0;i<100;i++){
+
+let conf=document.createElement("div");
+
+conf.className="confetti";
+
+conf.style.left=Math.random()*100+"vw";
+
+conf.style.animationDuration=
+(2+Math.random()*3)+"s";
+
+
+document.body.appendChild(conf);
+
+
+setTimeout(()=>{
+
+conf.remove();
+
+},5000);
+
+}
 
 }
