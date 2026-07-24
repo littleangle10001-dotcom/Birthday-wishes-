@@ -29,7 +29,25 @@ function startCountdown(){
 
         number--;
 
-        if(number < 0){
+        function startCountdown(){
+
+    let count = document.getElementById("count");
+
+    let number = 3;
+
+    count.innerHTML = number;
+
+
+    let timer = setInterval(()=>{
+
+        number--;
+
+        if(number > 0){
+
+            count.innerHTML = number;
+
+        }
+        else{
 
             clearInterval(timer);
 
