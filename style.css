@@ -197,4 +197,91 @@ button{
         font-size:32px;
     }
 
+}/* Floating Hearts */
+
+.heart{
+    position:fixed;
+    bottom:-20px;
+    font-size:25px;
+    animation:heartMove linear forwards;
+    z-index:10;
+    pointer-events:none;
 }
+
+
+@keyframes heartMove{
+
+    from{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+
+    to{
+        transform:translateY(-110vh) scale(1.8);
+        opacity:0;
+    }
+
+}
+
+
+
+/* Sparkles */
+
+.sparkle{
+
+    position:fixed;
+    font-size:20px;
+    animation:sparkleFade 3s forwards;
+    z-index:20;
+    pointer-events:none;
+
+}
+
+
+@keyframes sparkleFade{
+
+    0%{
+        opacity:0;
+        transform:scale(0);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.5);
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(0);
+    }
+
+}
+
+
+
+/* Confetti */
+
+.confetti{
+
+    position:fixed;
+    top:-10px;
+    width:10px;
+    height:20px;
+    background:white;
+    animation:fall linear forwards;
+    z-index:50;
+
+}
+
+
+@keyframes fall{
+
+    to{
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
+    }
+
+        }
